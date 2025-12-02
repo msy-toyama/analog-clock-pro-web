@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Analog Clock Pro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #6366f1; --secondary: #8b5cf6; --accent: #06b6d4; --bg-dark: #0f0f1a; --bg-card: #1a1a2e; --bg-card-hover: #252542; --text-primary: #ffffff; --text-secondary: #a1a1aa; --border: #2d2d44; --gradient-1: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg-dark); color: var(--text-primary); line-height: 1.8; min-height: 100vh; }
+        .bg-animation { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+        .bg-animation::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%); animation: float 20s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(30px, -30px); } }
+        header { padding: 2rem; text-align: center; border-bottom: 1px solid var(--border); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; background: rgba(15, 15, 26, 0.8); }
+        .logo { display: inline-flex; align-items: center; gap: 1rem; text-decoration: none; color: var(--text-primary); }
+        .logo-icon { width: 50px; height: 50px; background: var(--gradient-1); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+        .logo-text { font-size: 1.5rem; font-weight: 700; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        nav { margin-top: 1.5rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+        nav a { color: var(--text-secondary); text-decoration: none; padding: 0.5rem 1rem; border-radius: 8px; transition: all 0.3s ease; font-size: 0.9rem; }
+        nav a:hover, nav a.active { color: var(--text-primary); background: var(--bg-card); }
+        nav a.active { background: var(--gradient-1); }
+        main { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
+        .page-title { font-size: 2.5rem; font-weight: 700; text-align: center; margin-bottom: 0.5rem; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .page-subtitle { text-align: center; color: var(--text-secondary); margin-bottom: 3rem; }
+        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 2.5rem; margin-bottom: 2rem; transition: all 0.3s ease; }
+        .card:hover { background: var(--bg-card-hover); transform: translateY(-2px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); }
+        h2 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+        h2::before { content: ''; width: 4px; height: 24px; background: var(--gradient-1); border-radius: 2px; }
+        h3 { font-size: 1.1rem; font-weight: 500; margin: 1.5rem 0 0.75rem; color: var(--accent); }
+        p { color: var(--text-secondary); margin-bottom: 1rem; }
+        ul { color: var(--text-secondary); margin-left: 1.5rem; margin-bottom: 1rem; }
+        li { margin-bottom: 0.5rem; }
+        .highlight { background: rgba(99, 102, 241, 0.1); border-left: 3px solid var(--primary); padding: 1rem 1.5rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+        .highlight p { margin: 0; color: var(--text-primary); }
+        footer { text-align: center; padding: 3rem 2rem; border-top: 1px solid var(--border); color: var(--text-secondary); }
+        .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+        .footer-links a { color: var(--text-secondary); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--primary); }
+        @media (max-width: 768px) { .page-title { font-size: 1.75rem; } .card { padding: 1.5rem; } main { padding: 2rem 1rem; } }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+    <header>
+        <a href="index.html" class="logo">
+            <div class="logo-icon">⏰</div>
+            <span class="logo-text">Analog Clock Pro</span>
+        </a>
+        <nav>
+            <a href="privacy-policy.html" class="active">Privacy Policy</a>
+            <a href="terms-of-service.html">Terms of Service</a>
+            <a href="index.html">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <h1 class="page-title">Privacy Policy</h1>
+        <p class="page-subtitle">Last updated: December 2, 2025</p>
+
+        <div class="card">
+            <h2>Introduction</h2>
+            <p>Analog Clock Pro ("the App") respects your privacy and is committed to protecting your personal information. This Privacy Policy explains what information we collect and how we use it.</p>
+            <div class="highlight">
+                <p>This App does not collect, store, or transmit any personal information. All data is stored only on your device.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Information Collection</h2>
+            <h3>Information We Do NOT Collect</h3>
+            <ul>
+                <li>Personal identification information (name, email, phone number)</li>
+                <li>Location data</li>
+                <li>Contact information</li>
+                <li>Photos or media files</li>
+                <li>Device identifiers</li>
+            </ul>
+            <h3>Information Stored on Your Device</h3>
+            <p>The following information is stored only on your device and is never transmitted externally:</p>
+            <ul>
+                <li>App settings (theme selection, display settings)</li>
+                <li>Custom watch design data</li>
+                <li>Language settings</li>
+                <li>Purchase information (Pro version unlock status)</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>In-App Purchases</h2>
+            <p>This App offers in-app purchases through Apple's App Store. All payment processing is handled by Apple, and we do not have access to your payment information.</p>
+        </div>
+
+        <div class="card">
+            <h2>Third-Party Data Sharing</h2>
+            <p>This App does not share, sell, or provide your data to any third parties.</p>
+        </div>
+
+        <div class="card">
+            <h2>Data Protection</h2>
+            <p>Data created in this App (such as custom watches) is protected by iOS's standard data protection features. Data is stored only on your device and is never transmitted over the internet.</p>
+        </div>
+
+        <div class="card">
+            <h2>Children's Privacy</h2>
+            <p>This App does not intentionally collect personal information from children under 13. Since this App does not collect personal information, it is safe for users of all ages.</p>
+        </div>
+
+        <div class="card">
+            <h2>Changes to This Policy</h2>
+            <p>This Privacy Policy may be updated as necessary. Significant changes will be notified on this page. We recommend checking this page periodically.</p>
+        </div>
+
+        <div class="card">
+            <h2>Contact Us</h2>
+            <p>For questions about this Privacy Policy, please contact us via X (Twitter) DM.</p>
+            <p><a href="https://x.com/ikasumi_dev" target="_blank" rel="noopener noreferrer" style="color: var(--accent);">@ikasumi_dev</a></p>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-service.html">Terms of Service</a>
+            <a href="index.html">Contact</a>
+        </div>
+        <p>© 2025 Analog Clock Pro. All rights reserved.</p>
+    </footer>
+</body>
+</html>

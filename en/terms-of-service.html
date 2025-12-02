@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Analog Clock Pro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #6366f1; --secondary: #8b5cf6; --accent: #06b6d4; --bg-dark: #0f0f1a; --bg-card: #1a1a2e; --bg-card-hover: #252542; --text-primary: #ffffff; --text-secondary: #a1a1aa; --border: #2d2d44; --gradient-1: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg-dark); color: var(--text-primary); line-height: 1.8; min-height: 100vh; }
+        .bg-animation { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+        .bg-animation::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%); animation: float 20s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(30px, -30px); } }
+        header { padding: 2rem; text-align: center; border-bottom: 1px solid var(--border); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; background: rgba(15, 15, 26, 0.8); }
+        .logo { display: inline-flex; align-items: center; gap: 1rem; text-decoration: none; color: var(--text-primary); }
+        .logo-icon { width: 50px; height: 50px; background: var(--gradient-1); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+        .logo-text { font-size: 1.5rem; font-weight: 700; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        nav { margin-top: 1.5rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+        nav a { color: var(--text-secondary); text-decoration: none; padding: 0.5rem 1rem; border-radius: 8px; transition: all 0.3s ease; font-size: 0.9rem; }
+        nav a:hover, nav a.active { color: var(--text-primary); background: var(--bg-card); }
+        nav a.active { background: var(--gradient-1); }
+        main { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
+        .page-title { font-size: 2.5rem; font-weight: 700; text-align: center; margin-bottom: 0.5rem; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .page-subtitle { text-align: center; color: var(--text-secondary); margin-bottom: 3rem; }
+        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 2.5rem; margin-bottom: 2rem; transition: all 0.3s ease; }
+        .card:hover { background: var(--bg-card-hover); transform: translateY(-2px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); }
+        h2 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+        h2::before { content: ''; width: 4px; height: 24px; background: var(--gradient-1); border-radius: 2px; }
+        h3 { font-size: 1.1rem; font-weight: 500; margin: 1.5rem 0 0.75rem; color: var(--accent); }
+        p { color: var(--text-secondary); margin-bottom: 1rem; }
+        ul, ol { color: var(--text-secondary); margin-left: 1.5rem; margin-bottom: 1rem; }
+        li { margin-bottom: 0.5rem; }
+        .highlight { background: rgba(99, 102, 241, 0.1); border-left: 3px solid var(--primary); padding: 1rem 1.5rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+        .highlight p { margin: 0; color: var(--text-primary); }
+        .warning { background: rgba(239, 68, 68, 0.1); border-left: 3px solid #ef4444; padding: 1rem 1.5rem; border-radius: 0 10px 10px 0; margin: 1.5rem 0; }
+        .warning p { margin: 0; color: #fca5a5; }
+        footer { text-align: center; padding: 3rem 2rem; border-top: 1px solid var(--border); color: var(--text-secondary); }
+        .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+        .footer-links a { color: var(--text-secondary); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--primary); }
+        @media (max-width: 768px) { .page-title { font-size: 1.75rem; } .card { padding: 1.5rem; } main { padding: 2rem 1rem; } }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+    <header>
+        <a href="index.html" class="logo">
+            <div class="logo-icon">⏰</div>
+            <span class="logo-text">Analog Clock Pro</span>
+        </a>
+        <nav>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-service.html" class="active">Terms of Service</a>
+            <a href="index.html">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <h1 class="page-title">Terms of Service</h1>
+        <p class="page-subtitle">Last updated: December 2, 2025</p>
+
+        <div class="card">
+            <h2>Article 1 (Application)</h2>
+            <p>These Terms of Service ("Terms") set forth the conditions for using Analog Clock Pro ("the App"). By using the App, you agree to these Terms.</p>
+            <div class="highlight">
+                <p>By downloading or using this App, you are deemed to have agreed to these Terms.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Article 2 (Service Description)</h2>
+            <p>This App provides the following features:</p>
+            <ul>
+                <li>Analog clock display with 100+ themes</li>
+                <li>Custom watch (My Watch) creation</li>
+                <li>Chronograph (stopwatch) function</li>
+                <li>Date and day display</li>
+                <li>15 language support</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Article 3 (Free and Pro Versions)</h2>
+            <h3>Free Version Features</h3>
+            <ul>
+                <li>8 themes</li>
+                <li>Create 1 My Watch</li>
+                <li>Use first My Watch as clock display</li>
+                <li>Chronograph function</li>
+            </ul>
+            <h3>Pro Version Features (In-App Purchase)</h3>
+            <ul>
+                <li>All 100+ themes</li>
+                <li>Unlimited My Watch creation</li>
+                <li>Use any My Watch as clock display</li>
+            </ul>
+            <p>Pro version is a one-time purchase (not a subscription).</p>
+        </div>
+
+        <div class="card">
+            <h2>Article 4 (In-App Purchases)</h2>
+            <p>In-app purchases are processed through Apple's App Store.</p>
+            <ul>
+                <li>Payment is charged to your Apple ID payment method</li>
+                <li>Pro features are unlocked automatically after purchase</li>
+                <li>Restore purchases from "Restore Purchases" in settings</li>
+            </ul>
+            <div class="warning">
+                <p>Refunds for in-app purchases are subject to Apple's policy. Please contact Apple Support for refund requests.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Article 5 (Prohibited Actions)</h2>
+            <ol>
+                <li>Reverse engineering, decompiling, or disassembling the App</li>
+                <li>Modifying the App or creating derivative works</li>
+                <li>Redistributing, selling, or renting the App</li>
+                <li>Unlocking Pro features through unauthorized means</li>
+                <li>Any actions violating laws or public order</li>
+            </ol>
+        </div>
+
+        <div class="card">
+            <h2>Article 6 (Intellectual Property)</h2>
+            <p>All intellectual property rights (copyrights, trademarks, patents, etc.) related to this App belong to the developer.</p>
+            <p>Rights to custom watch designs created by users belong to the users. However, copyrights to basic components (hand styles, markers, etc.) belong to the developer.</p>
+        </div>
+
+        <div class="card">
+            <h2>Article 7 (Disclaimer)</h2>
+            <p>The developer is not responsible for:</p>
+            <ul>
+                <li>Damages arising from use of this App</li>
+                <li>Interruption, suspension, or changes to the App</li>
+                <li>Bugs or defects in the App</li>
+                <li>Loss of user data</li>
+                <li>Unauthorized access by third parties</li>
+            </ul>
+            <p>This App is provided "as is" without any warranties, express or implied.</p>
+        </div>
+
+        <div class="card">
+            <h2>Article 8 (Service Changes/Termination)</h2>
+            <p>The developer may change or terminate the App without prior notice to users.</p>
+        </div>
+
+        <div class="card">
+            <h2>Article 9 (Changes to Terms)</h2>
+            <p>The developer may change these Terms as necessary. Changed Terms take effect when posted on this page.</p>
+        </div>
+
+        <div class="card">
+            <h2>Article 10 (Governing Law)</h2>
+            <p>These Terms are governed by and construed in accordance with the laws of Japan. The Tokyo District Court shall have exclusive jurisdiction for any disputes.</p>
+        </div>
+
+        <div class="card">
+            <h2>Article 11 (Contact)</h2>
+            <p>For questions about these Terms, please contact us via X (Twitter) DM.</p>
+            <p><a href="https://x.com/ikasumi_dev" target="_blank" rel="noopener noreferrer" style="color: var(--accent);">@ikasumi_dev</a></p>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-service.html">Terms of Service</a>
+            <a href="index.html">Contact</a>
+        </div>
+        <p>© 2025 Analog Clock Pro. All rights reserved.</p>
+    </footer>
+</body>
+</html>

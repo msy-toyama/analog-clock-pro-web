@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analog Clock Pro - Jam Analog Elegan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #6366f1; --secondary: #8b5cf6; --accent: #06b6d4; --bg-dark: #0f0f1a; --bg-card: #1a1a2e; --bg-card-hover: #252542; --text-primary: #ffffff; --text-secondary: #a1a1aa; --border: #2d2d44; --gradient-1: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg-dark); color: var(--text-primary); line-height: 1.8; min-height: 100vh; }
+        .bg-animation { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+        .bg-animation::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%); animation: float 20s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(30px, -30px); } }
+        header { padding: 2rem; text-align: center; border-bottom: 1px solid var(--border); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; background: rgba(15, 15, 26, 0.8); }
+        .header-top { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; flex-wrap: wrap; gap: 1rem; }
+        .logo { display: inline-flex; align-items: center; gap: 1rem; text-decoration: none; color: var(--text-primary); }
+        .logo-icon { width: 50px; height: 50px; background: var(--gradient-1); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+        .logo-text { font-size: 1.5rem; font-weight: 700; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .lang-selector { position: relative; }
+        .lang-selector select { background: var(--bg-card); color: var(--text-primary); border: 1px solid var(--border); border-radius: 8px; padding: 0.5rem 2rem 0.5rem 1rem; font-size: 0.9rem; cursor: pointer; appearance: none; }
+        .lang-selector::after { content: '▼'; position: absolute; right: 0.75rem; top: 50%; transform: translateY(-50%); font-size: 0.7rem; color: var(--text-secondary); pointer-events: none; }
+        nav { margin-top: 1.5rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+        nav a { color: var(--text-secondary); text-decoration: none; padding: 0.5rem 1rem; border-radius: 8px; transition: all 0.3s ease; font-size: 0.9rem; }
+        nav a:hover, nav a.active { color: var(--text-primary); background: var(--bg-card); }
+        main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        .hero { text-align: center; padding: 4rem 0; }
+        .hero h1 { font-size: 3rem; font-weight: 700; margin-bottom: 1rem; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.25rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto 2rem; }
+        .app-store-badge { display: inline-block; transition: transform 0.3s ease; }
+        .app-store-badge:hover { transform: scale(1.05); }
+        .app-store-badge img { height: 50px; }
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 3rem 0; }
+        .feature-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; transition: all 0.3s ease; }
+        .feature-card:hover { background: var(--bg-card-hover); transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); }
+        .feature-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+        .feature-card h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+        .feature-card p { color: var(--text-secondary); font-size: 0.95rem; }
+        .section-title { text-align: center; font-size: 2rem; font-weight: 700; margin: 4rem 0 2rem; }
+        .contact-section { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 3rem; text-align: center; margin: 3rem 0; }
+        .contact-section h2 { font-size: 1.5rem; margin-bottom: 1rem; }
+        .contact-section p { color: var(--text-secondary); margin-bottom: 1.5rem; }
+        .twitter-link { display: inline-flex; align-items: center; gap: 0.75rem; background: #000; color: #fff; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 500; transition: all 0.3s ease; }
+        .twitter-link:hover { background: #1a1a1a; transform: translateY(-2px); }
+        .twitter-link svg { width: 24px; height: 24px; }
+        .faq { margin: 3rem 0; }
+        .faq-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 1rem; overflow: hidden; }
+        .faq-question { padding: 1.5rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 500; }
+        .faq-question:hover { background: var(--bg-card-hover); }
+        .faq-answer { padding: 0 1.5rem 1.5rem; color: var(--text-secondary); display: none; }
+        .faq-item.active .faq-answer { display: block; }
+        .faq-item.active .faq-icon { transform: rotate(180deg); }
+        .faq-icon { transition: transform 0.3s ease; }
+        footer { text-align: center; padding: 3rem 2rem; border-top: 1px solid var(--border); color: var(--text-secondary); }
+        .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+        .footer-links a { color: var(--text-secondary); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--primary); }
+        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .header-top { justify-content: center; } }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+    <header>
+        <div class="header-top">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">⏰</div>
+                <span class="logo-text">Analog Clock Pro</span>
+            </a>
+            <div class="lang-selector">
+                <select onchange="changeLanguage(this.value)">
+                    <option value="id" selected>🇮🇩 Indonesia</option>
+                    <option value="ja">🇯🇵 日本語</option>
+                    <option value="en">🇺🇸 English</option>
+                    <option value="de">🇩🇪 Deutsch</option>
+                    <option value="fr">🇫🇷 Français</option>
+                    <option value="es">🇪🇸 Español</option>
+                    <option value="zh-CN">🇨🇳 简体中文</option>
+                    <option value="ko">🇰🇷 한국어</option>
+                </select>
+            </div>
+        </div>
+        <nav>
+            <a href="privacy-policy.html">Privasi</a>
+            <a href="terms-of-service.html">Ketentuan</a>
+            <a href="#contact">Kontak</a>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h1>Jam Analog Elegan</h1>
+            <p>100+ desain indah. Buat jam Anda sendiri. Sempurna untuk pecinta waktu.</p>
+            <a href="https://apps.apple.com/app/analog-clock-pro/id6740074846" class="app-store-badge" target="_blank" rel="noopener noreferrer">
+                <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/id?size=250x83" alt="Unduh di App Store">
+            </a>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h3>100+ Desain</h3>
+                <p>Dari klasik hingga modern, temukan gaya sempurna Anda.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⌚</div>
+                <h3>Jam Saya</h3>
+                <p>Buat jam unik Anda dengan komponen yang dapat disesuaikan.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⏱️</div>
+                <h3>Kronograf</h3>
+                <p>Fungsi stopwatch profesional dengan desain elegan.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h3>15 Bahasa</h3>
+                <p>Mendukung Bahasa Indonesia, Inggris, Jepang, dan lainnya.</p>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2>📮 Kontak & Dukungan</h2>
+            <p>Untuk pertanyaan, permintaan fitur, atau laporan bug, hubungi kami melalui DM di X (Twitter).</p>
+            <a href="https://x.com/ikasumi_dev" class="twitter-link" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                @ikasumi_dev
+            </a>
+        </section>
+
+        <section class="faq">
+            <h2 class="section-title">❓ Pertanyaan Umum</h2>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Apa perbedaan antara Free dan Pro?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Versi gratis mencakup 8 desain dan 1 Jam Saya. Pro membuka 100+ desain dan Jam Saya tak terbatas.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Bagaimana cara memulihkan pembelian?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Buka Pengaturan dan ketuk "Pulihkan Pembelian" untuk memulihkan fitur Pro di semua perangkat.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Apakah ini langganan?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Tidak! Analog Clock Pro adalah pembelian satu kali. Bayar sekali, gunakan selamanya.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-links">
+            <a href="privacy-policy.html">Privasi</a>
+            <a href="terms-of-service.html">Ketentuan</a>
+            <a href="#contact">Kontak</a>
+        </div>
+        <p>© 2025 Analog Clock Pro. Hak cipta dilindungi.</p>
+    </footer>
+    <script>
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => q.parentElement.classList.toggle('active'));
+        });
+        function changeLanguage(lang) {
+            const langPaths = { 'ja': '../index.html', 'en': '../en/index.html', 'de': '../de/index.html', 'fr': '../fr/index.html', 'es': '../es/index.html', 'zh-CN': '../zh-CN/index.html', 'zh-TW': '../zh-TW/index.html', 'ko': '../ko/index.html', 'id': 'index.html' };
+            if (langPaths[lang]) window.location.href = langPaths[lang];
+        }
+    </script>
+</body>
+</html>
